@@ -29,6 +29,7 @@ const config = {
 const defaultConfig = simpleConfig(config);
 
 defaultConfig.name = 'ray-site';
+defaultConfig.output.publicPath = '.';
 
 defaultConfig.externals = {
   'monaco-editor': 'monaco'
