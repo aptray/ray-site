@@ -1,0 +1,72 @@
+{
+  "afComponentAvatar": {
+    "prefix": "impafAvatar",
+    "body": "import { Avatar } from 'amos-framework';",
+    "description": "import af component Avatar"
+  },
+  "afComponentButton": {
+    "prefix": "impafButton",
+    "body": "import { Button } from 'amos-framework';",
+    "description": "import af component Button"
+  },
+  "afComponentInput": {
+    "prefix": "impafInput",
+    "body": "import { Input } from 'amos-framework';",
+    "description": "import af component Input"
+  },
+  "afComponentInputNumber": {
+    "prefix": "impafInputNumber",
+    "body": "import { InputNumber } from 'amos-framework';",
+    "description": "import af component InputNumber"
+  },
+  "afComponentmessage": {
+    "prefix": "impafMsg",
+    "body": "import { message } from 'amos-framework';",
+    "description": "import af component message"
+  },
+  "afComponentModal": {
+    "prefix": "impafModal",
+    "body": "import { Modal } from 'amos-framework';",
+    "description": "import af component Modal"
+  },
+  "afComponentSwitch": {
+    "prefix": "impafSwitch",
+    "body": "import { Switch } from 'amos-framework';",
+    "description": "import af component Switch"
+  },
+  "afComponentTabs": {
+    "prefix": "impafTabs",
+    "body": "import { Tabs } from 'amos-framework';",
+    "description": "import af component Tabs"
+  },
+
+  "afClassComponent": {
+    "prefix": "afc",
+    "body": [
+      "import React, { Component } from 'react';",
+      "import PropTypes from 'prop-types';",
+      "import { Button } from 'amos-framework';",
+      "",
+      "/**",
+      " * ",
+      " * @desciption created by af sinppets",
+      " * @date create date $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE",
+      " * @class ${1:${TM_FILENAME_BASE}}",
+      " * @extends {Component}",
+      " */",
+      "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
+      "\tstatic propTypes = {",
+      "",
+      "\t}",
+      "",
+      "\trender() {",
+      "\t\treturn (",
+      "\t\t\t<Button>$0</Button>",
+      "\t\t);",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "Creates a AF React component class with ES7 module system"
+  }
+}

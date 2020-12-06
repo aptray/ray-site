@@ -1,0 +1,25 @@
+{
+  "name": "ray-site",
+  "version": "1.0.0",
+  "description": "ray online coder",
+  "main": "./lib/index.js",
+  "author": "ilex",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "eslint src tests",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "set NODE_ENV=development && webpack-dev-server",
+    "build": "set NODE_ENV=production && npm run clean && webpack"
+  },
+  "devDependencies": {
+    "amos-build": "^4.x",
+    "react": "~16.3.2",
+    "react-dom": "~16.3.3"
+  },
+  "dependencies": {
+    "ray-online-coder": "^0.0.4",
+    "ray-progress": "^1.0.0"
+  }
+}
