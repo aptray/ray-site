@@ -12,4 +12,10 @@ personal site
 
 ## npm
 
-[html](https://unpkg.com/ray-site@1.0.0/dist/index.html) or [dist](https://unpkg.com/ray-site@1.0.0/dist)
+### latest
+
+[html](https://unpkg.com/ray-site@latest/dist/index.html) or [dist](https://unpkg.com/ray-site@latest/dist)
+
+### other version
+
+[html v1.0.0](https://unpkg.com/ray-site@1.0.0/dist/index.html) or [dist](https://unpkg.com/ray-site@1.0.0/dist)
