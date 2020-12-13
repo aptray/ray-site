@@ -1,5 +1,5 @@
 import IndexCom from './IndexCom';
-import RunAF from './RunAF';
+import RunAF from './AsyncRunner';
 
 export {
   RunAF

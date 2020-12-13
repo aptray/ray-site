@@ -1,7 +1,12 @@
 
 import RProgress from 'ray-progress';
+import Home from './../home';
 import RootView from './../RootView';
 import onlineRoutes from './../online';
+
+const routes = [
+  { path: 'main', component: Home }
+];
 
 
 const progressStart = () => {
@@ -13,7 +18,10 @@ const rootRoutes = {
   onEnter: progressStart,
   onChange: progressStart,
   component: RootView,
+  // indexRoute: { component: Home },
+  indexRoute: { onEnter: (nextState, replace) => replace('/main') },
   childRoutes: [
+    ...routes,
     onlineRoutes
   ]
 };

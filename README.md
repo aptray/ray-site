@@ -8,8 +8,8 @@ personal site
 
 ## gh
 
-https://aptray.github.io/ray-site/dist/index.html
+[html](https://aptray.github.io/ray-site/dist/index.html) or [dist](https://aptray.github.io/ray-site/dist)
 
 ## npm
 
-https://unpkg.com/ray-site@1.0.0/dist/index.html
+[html](https://unpkg.com/ray-site@1.0.0/dist/index.html) or [dist](https://unpkg.com/ray-site@1.0.0/dist)

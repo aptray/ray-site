@@ -1,50 +1,103 @@
 @import '~amos-framework/dist/amosframework.css';
 
-$top-height: 64px;
+$top-height: 56px;
 $theme-color: #345fa6;
 
-.view-port {
+.loading-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.site-home {
+  background: #f1f1f1;
+}
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   width: 100%;
-  height: 100%;
+  height: $top-height;
+  padding-left: 20px;
+  font-size: 26px;
+  line-height: 56px;
+  color: white;
+  background: $theme-color;
+}
 
-  .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+.site-list {
+  width: 80%;
+  min-height: 888px;
+  margin: 0 auto;
+  margin-top: $top-height;
+}
+
+.site-group {
+  &-header {
+    position: relative;
     width: 100%;
-    height: $top-height;
-    line-height: 4rem;
-    color: white;
-    background: $theme-color;
-
-    .amos-dropnav {
-      font-size: 20px;
-
-      .amos-dropnav-item > a {
-        color: white;
-      }
-
-      .amos-dropnav-item.amos-dropnav-sub-triger > a::after {
-        color: white;
-      }
-
-      .amos-dropnav-sub {
-        font-size: 12px;
-        color: black;
-
-        .amos-dropnav-item > a {
-          color: black;
-        }
-      }
-    }
+    height: 50px;
+    padding: 4px 15px;
+    margin: 16px 0;
+    font-size: 20px;
+    line-height: 40px;
+    background: white;
+    border-radius: 3px;
   }
 
-  .content-body {
-    position: absolute;
-    top: $top-height;
-    left: 0;
-    width: 100%;
-    height: calc(100% - #{$top-height});
+  &-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    transition: opacity 0.15s ease-in-out;
+  }
+
+  &-item {
+    position: relative;
+    margin: 16px;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #e5e9ef;
+    border-radius: 4px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-text {
+      display: flex;
+      padding: 12px;
+      align-items: center;
+      justify-content: space-between;
+
+      .text-inner {
+        height: 20px;
+        max-width: 170px;
+        margin-left: 8px;
+        overflow: hidden;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 20px;
+        color: #555;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: color 0.2s linear;
+      }
+    }
+
+    &-thumb {
+      img {
+        width: 238px;
+      }
+    }
   }
 }

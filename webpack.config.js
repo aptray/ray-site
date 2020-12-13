@@ -23,13 +23,17 @@ const config = {
   entry,
   alias,
   enableWorker: true,
+  opened: true,
   sourceMap: !isProd
 };
 
 const defaultConfig = simpleConfig(config);
 
 defaultConfig.name = 'ray-site';
-defaultConfig.output.publicPath = '.';
+
+if (isProd){
+  defaultConfig.output.publicPath = '.';
+}
 
 defaultConfig.externals = {
   'monaco-editor': 'monaco'

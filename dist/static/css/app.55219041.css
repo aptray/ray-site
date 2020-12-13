@@ -1,0 +1,10 @@
+/*!
+ * 
+ * ray-site v1.0.1
+ * 
+ * Copyright 2016-present, AMOS.
+ * All rights reserved.
+ * 
+ */
+.loading-wrapper{position:absolute;top:50%;left:50%;text-align:center;-webkit-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%)}.site-home{background:#f1f1f1}.site-header{position:absolute;top:0;left:0;z-index:1;width:100%;height:56px;padding-left:20px;font-size:26px;line-height:56px;color:white;background:#345fa6}.site-list{width:80%;min-height:888px;margin:0 auto;margin-top:56px}.site-group-header{position:relative;width:100%;height:50px;padding:4px 15px;margin:16px 0;font-size:20px;line-height:40px;background:white;border-radius:3px}.site-group-body{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-transition:opacity 0.15s ease-in-out;transition:opacity 0.15s ease-in-out}.site-group-item{position:relative;margin:16px;cursor:pointer;background:white;border:1px solid #e5e9ef;border-radius:4px}.site-group-item:first-child{margin-left:0}.site-group-item:last-child{margin-right:0}.site-group-item-text{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:12px;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}.site-group-item-text .text-inner{height:20px;max-width:170px;margin-left:8px;overflow:hidden;font-size:12px;font-weight:600;line-height:20px;color:#555;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;-webkit-transition:color 0.2s linear;transition:color 0.2s linear}.site-group-item-thumb img{width:238px}
+
