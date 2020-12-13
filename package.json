@@ -1,6 +1,6 @@
 {
   "name": "ray-site",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ray online coder",
   "main": "index.js",
   "author": "ilex",

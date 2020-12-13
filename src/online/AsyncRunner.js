@@ -16,7 +16,7 @@ class AsyncRunner extends Component {
 
   componentDidMount() {
     this.timeId = setInterval(() => {
-      if (window.monaco){
+      if (window.monaco && Object.keys(window.monaco).length > 0){
         clearInterval(this.timeId);
         this.setState({
           ready: true
