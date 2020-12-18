@@ -1,6 +1,6 @@
 {
   "name": "ray-site",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ray online coder",
   "main": "index.js",
   "author": "ilex",
@@ -19,7 +19,7 @@
     "react-dom": "~16.3.3"
   },
   "dependencies": {
-    "ray-online-coder": "^0.0.4",
+    "ray-online-coder": "^0.0.5",
     "ray-progress": "^1.0.0"
   },
   "publishConfig": {

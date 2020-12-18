@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Item from './Item';
+import HomeSite from 'ray-online-coder/lib/site';
+import defaultThumb from './../assets/dark-logo.png';
 
 const datas = [
   {
@@ -29,28 +30,8 @@ class Home extends Component {
     children: PropTypes.node
   };
 
-  renderGroup = () => {
-    return datas.map(d => {
-      return (
-        <div key={d.key} className="site-group">
-          <div className="site-group-header">{d.text}</div>
-          <ul className="site-group-body">
-            {d.children.map(child => <Item {...child} key={child.key} />)}
-          </ul>
-        </div>
-      );
-    });
-  }
-
   render() {
-    return (
-      <div className="site-home">
-        <div className="site-header">raysite 总站</div>
-        <div className="site-list">
-          {this.renderGroup()}
-        </div>
-      </div>
-    );
+    return <HomeSite header="raysite 总站" navs={datas} defaultThumb={defaultThumb} />;
   }
 }
 
