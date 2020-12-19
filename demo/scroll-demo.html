@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鼠标悬浮出现滚动条</title>
+  <style>
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  ul,
+  li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  .wrap {
+    width: 100vw;
+    height: 320px;
+    overflow-y: auto;
+    text-align: center;
+    background: #cecece;
+  }
+
+  .processor {
+    /* 当子元素采用margin进行垂直居中时，如果元素动态出现滚动条，此时可给子元素新增一个div，设置如下属性，
+      即可避免滚动条出现时的跳动现象 */
+
+    /* padding-left: calc(100vw - 100%); */
+
+    margin-left: calc(100vw - 100%);
+  }
+
+  .processor:hover .inner {
+    height: 80vh;
+  }
+
+  .inner {
+    width: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #eee;
+
+    /* animation: scrollbar-toggle 4s infinite alternate; */
+  }
+
+  @keyframes scrollbar-toggle {
+    from { height: 10vh; }
+    to { height: 70vh; }
+  }
+
+  .container::-webkit-scrollbar {
+    display: none;
+    width: 6px;
+    height: 6px;
+    background-color: #eee;
+  }
+
+  .container::-webkit-scrollbar-track {
+    background-color: #eee;
+  }
+
+  .container::-webkit-scrollbar-thumb {
+    background-color: #7b7b7b;
+    border: 1px solid #7b7b7b;
+  }
+
+  .container::-webkit-scrollbar-thumb:active {
+    background-color: #4e4e4e;
+  }
+
+  .container::-webkit-scrollbar-thumb:hover {
+    background-color: #4e4e4e;
+  }
+
+  .container:hover::-webkit-scrollbar {
+    display: block;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .container {
+    height: 100px;
+    padding: 6px;
+    overflow: auto;
+    background: #fff4f4;
+  }
+
+  /* 如果元素沾满全行，此时内部元素居中，则需要给每一个元素添加 margin-left 才能防止抖动 */
+
+  .container.center li {
+    margin-left: calc(100vw - 100%);
+  }
+
+  .container.container-overlay {
+    overflow: overlay;
+  }
+
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+      <div class="processor">
+        <div class="inner" title="采用 margin 进行垂直居中">
+          <img src="https://tinypng.com/images/panda-chewing.png">
+          <p>出现滚动条时，查看是否有晃动！</p>
+        </div>
+    </div>
+  </div>
+
+  <div>以下内容区域，鼠标悬浮出现滚动条（居左）</div>
+  <div class="rootview">
+    <ul class="container">
+      <li>数据1</li>
+      <li>数据2</li>
+      <li>数据3</li>
+      <li>数据4</li>
+      <li>数据5</li>
+      <li>数据6</li>
+      <li>数据7</li>
+      <li>数据8</li>
+      <li>数据9</li>
+      <li>数据10</li>
+      <li>数据11</li>
+      <li>数据12</li>
+    </ul>
+  </div>
+  <div>以下内容区域，鼠标悬浮出现滚动条（居中）</div>
+  <div class="rootview">
+    <ul class="container center">
+      <li>数据1</li>
+      <li>数据2</li>
+      <li>数据3</li>
+      <li>数据4</li>
+      <li>数据5</li>
+      <li>数据6</li>
+      <li>数据7</li>
+      <li>数据8</li>
+      <li>数据9</li>
+      <li>数据10</li>
+      <li>数据11</li>
+      <li>数据12</li>
+    </ul>
+  </div>
+  <div>以下内容区域，鼠标悬浮出现滚动条（居中）chrome 滚动条悬浮</div>
+  <div class="rootview">
+    <ul class="container container-overlay center">
+      <li>数据1</li>
+      <li>数据2</li>
+      <li>数据3</li>
+      <li>数据4</li>
+      <li>数据5</li>
+      <li>数据6</li>
+      <li>数据7</li>
+      <li>数据8</li>
+      <li>数据9</li>
+      <li>数据10</li>
+      <li>数据11</li>
+      <li>数据12</li>
+    </ul>
+  </div>
+
+</body>
+</html>

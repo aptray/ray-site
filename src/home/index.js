@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import HomeSite from 'ray-online-coder/lib/site';
 import defaultThumb from './../assets/dark-logo.png';
 
+const baseUrl = 'https://unpkg.com/ray-site@latest';
+
 const datas = [
   {
     key: 'online',
@@ -18,6 +20,7 @@ const datas = [
     key: 'docsite',
     text: '文档库',
     children: [
+      { key: 'scroll', text: '滚动条', href: `${baseUrl}/demo/scroll-demo.html` },
       { key: 'viz', text: 'amos-viz', href: '/doc/viz' },
       { key: 'coder', text: 'amos-coder', href: '/doc/coder' },
       { key: 'map', text: 'amos-amap', href: '/doc/amap' }
