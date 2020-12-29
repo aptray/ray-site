@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Spin } from 'amos-framework';
+import MonacoEditor, { loadMonaco } from 'amos-code-actuator/lib/monaco';
 import RunAF from './RunAF';
-
-const delay = 1000;
 
 class AsyncRunner extends Component {
 
@@ -11,22 +10,27 @@ class AsyncRunner extends Component {
     this.state = {
       ready: false
     };
+
+    this._mounted = true;
+
+    this.load();
   }
 
+  componentWillUnmount() {
+    this._mounted = false;
+  }
 
-  componentDidMount() {
-    this.timeId = setInterval(() => {
-      if (window.monaco && Object.keys(window.monaco).length > 0){
-        clearInterval(this.timeId);
+  load(){
+    loadMonaco({
+      monacoPrefix: window.monacoPrefix
+    }).then((monaco) => {
+      MonacoEditor.setGlobalMonaco(monaco);
+      if (this._mounted){
         this.setState({
           ready: true
         });
       }
-    }, delay);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timeId);
+    });
   }
 
   render() {
@@ -41,9 +45,5 @@ class AsyncRunner extends Component {
     );
   }
 }
-
-AsyncRunner.propTypes = {
-
-};
 
 export default AsyncRunner;

@@ -46,12 +46,28 @@ defaultConfig.plugins.push(
     {
       inject: 'head',
       tag: 'script',
-      code: `var require = { paths: { 'vs': '${monacoPrefix}' } };`
-    },
-    { inject: 'body', tag: 'script', attr: { src: monacoPrefix + '/editor/editor.main.js' } }, // order 3
-    { inject: 'body', tag: 'script', attr: { src: monacoPrefix + '/editor/editor.main.nls.js' } }, // order 2
-    { inject: 'body', tag: 'script', attr: { src: monacoPrefix + '/loader.js' } }, // order 1
+      code: `
+      var monacoPrefix = '${monacoPrefix}';
+      // 设置初始 monaco 以防 external 中 monaco 为 undefined
+      var monaco;
+      `
+    }
   ])
 );
+
+// const monacoPrefix = isProd ? 'https://cdn.bootcdn.net/ajax/libs/monaco-editor/0.15.6/min/vs' : './node_modules/monaco-editor/min/vs';
+
+// defaultConfig.plugins.push(
+//   new HtmlInlineCodePlugin([
+//     {
+//       inject: 'head',
+//       tag: 'script',
+//       code: `var require = { paths: { 'vs': '${monacoPrefix}' } };`
+//     },
+//     { inject: 'body', tag: 'script', attr: { src: monacoPrefix + '/editor/editor.main.js' } }, // order 3
+//     { inject: 'body', tag: 'script', attr: { src: monacoPrefix + '/editor/editor.main.nls.js' } }, // order 2
+//     { inject: 'body', tag: 'script', attr: { src: monacoPrefix + '/loader.js' } }, // order 1
+//   ])
+// );
 
 module.exports = defaultConfig;

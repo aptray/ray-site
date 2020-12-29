@@ -1242,6 +1242,9 @@
     display: block;
     width: 100%;
     height: 100%; }
+  .amos-avatar-icon img {
+    width: 100%;
+    height: 100%; }
 
 /**  Colors */
 /** border */
@@ -1576,7 +1579,9 @@
 .amos-spin-blur {
   overflow: hidden;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.8;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -2762,6 +2767,14 @@
     background-color: transparent;
     opacity: 1; }
 
+.amos-btn-link {
+  color: #345fa6;
+  background-color: transparent;
+  border: 0; }
+  .amos-btn-link:hover:enabled, .amos-btn-link:active:enabled {
+    color: #1a4fa3;
+    background-color: transparent; }
+
 .amos-button-group {
   display: inline-block; }
   .amos-button-group .amos-btn {
@@ -3270,6 +3283,15 @@
     border: 0;
     border-radius: 0; }
 
+.border-scale-anim {
+  -webkit-animation: amosBorderScale 1s infinite cubic-bezier(0.78, 0.14, 0.15, 0.86);
+          animation: amosBorderScale 1s infinite cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s; }
+  .border-scale-anim:hover {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; }
+
 @-webkit-keyframes amosTipsSlideUpIn {
   0% {
     opacity: 0;
@@ -3325,6 +3347,22 @@
             transform-origin: 0% 0%;
     -webkit-transform: scaleY(0);
             transform: scaleY(0); } }
+
+@-webkit-keyframes amosBorderScale {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.6);
+            box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.6); }
+  100% {
+    -webkit-box-shadow: 0 0 20px 0 rgba(255, 0, 0, 0.8);
+            box-shadow: 0 0 20px 0 rgba(255, 0, 0, 0.8); } }
+
+@keyframes amosBorderScale {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.6);
+            box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.6); }
+  100% {
+    -webkit-box-shadow: 0 0 20px 0 rgba(255, 0, 0, 0.8);
+            box-shadow: 0 0 20px 0 rgba(255, 0, 0, 0.8); } }
 
 /**  Colors */
 /** border */
@@ -4271,8 +4309,6 @@
     -moz-appearance: textfield; }
   .amos-input-number:hover .amos-input-number-control {
     opacity: 1; }
-  .amos-input-number + .amos-input-number {
-    margin-left: 10px; }
   .amos-input-number-control {
     position: absolute;
     top: 1px;
@@ -4544,59 +4580,57 @@
       .complex-tab-nav-scroll .complex-tab-nav-list .amos-tabs-list {
         position: relative; }
 
-.amos-tabs.amos-tabs-card .amos-tabs-tabitem-inner:hover, .amos-tabs.amos-tabs-card .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner, .amos-tabs.amos-tabs-card .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner:hover {
+.amos-tabs.amos-tabs-card > .amos-tabs-list .amos-tabs-tabitem-inner:hover, .amos-tabs.amos-tabs-card > .amos-tabs-list .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner, .amos-tabs.amos-tabs-card > .amos-tabs-list .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner:hover {
   color: #345fa6;
   background: white;
   border: 1px solid #deddde;
   border-bottom: 1px solid #345fa6; }
 
-.amos-tabs.amos-tabs-card .amos-tabs-list {
+.amos-tabs.amos-tabs-card > .amos-tabs-list {
   padding: 0 0.5em; }
+  .amos-tabs.amos-tabs-card > .amos-tabs-list .amos-tabs-tabitem-inner {
+    padding: 0.7em 1.2em;
+    margin-left: 0.5em;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    background: -webkit-gradient(linear, left top, left bottom, from(#e4e4e4), color-stop(0%, #e4e4e4), color-stop(100%, #f2f2f2), to(#f2f2f2));
+    background: -webkit-linear-gradient(top, #e4e4e4 0%, #e4e4e4 0%, #f2f2f2 100%, #f2f2f2 100%);
+    background: linear-gradient(180deg, #e4e4e4 0%, #e4e4e4 0%, #f2f2f2 100%, #f2f2f2 100%);
+    border: 1px solid #deddde;
+    border-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; }
 
-.amos-tabs.amos-tabs-card .amos-tabs-tabitem-inner {
-  padding: 0.7em 1.2em;
-  margin-left: 0.5em;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
-  background: -webkit-gradient(linear, left top, left bottom, from(#e4e4e4), color-stop(0%, #e4e4e4), color-stop(100%, #f2f2f2), to(#f2f2f2));
-  background: -webkit-linear-gradient(top, #e4e4e4 0%, #e4e4e4 0%, #f2f2f2 100%, #f2f2f2 100%);
-  background: linear-gradient(180deg, #e4e4e4 0%, #e4e4e4 0%, #f2f2f2 100%, #f2f2f2 100%);
-  border: 1px solid #deddde;
-  border-radius: 4px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0; }
-
-.amos-tabs.amos-tabs-line .amos-tabs-tabitem-inner:hover, .amos-tabs.amos-tabs-line .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner, .amos-tabs.amos-tabs-line .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner:hover {
+.amos-tabs.amos-tabs-line > .amos-tabs-list .amos-tabs-tabitem-inner:hover, .amos-tabs.amos-tabs-line > .amos-tabs-list .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner, .amos-tabs.amos-tabs-line > .amos-tabs-list .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner:hover {
   color: #345fa6;
   background-color: transparent;
   border: 0; }
 
-.amos-tabs.amos-tabs-line .amos-tabs-list {
+.amos-tabs.amos-tabs-line > .amos-tabs-list {
   padding: 0 0.5em; }
+  .amos-tabs.amos-tabs-line > .amos-tabs-list .amos-tabs-tabitem {
+    position: relative; }
+    .amos-tabs.amos-tabs-line > .amos-tabs-list .amos-tabs-tabitem::before {
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 0;
+      border-bottom: 2px solid #345fa6;
+      content: '';
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+    .amos-tabs.amos-tabs-line > .amos-tabs-list .amos-tabs-tabitem-inner {
+      font-size: 14px;
+      background-color: transparent;
+      border: 0; }
+    .amos-tabs.amos-tabs-line > .amos-tabs-list .amos-tabs-tabitem.amos-tabs-tabitem-active::before {
+      left: 0;
+      width: 100%; }
 
-.amos-tabs.amos-tabs-line .amos-tabs-tabitem {
-  position: relative; }
-  .amos-tabs.amos-tabs-line .amos-tabs-tabitem::before {
-    position: absolute;
-    bottom: -1px;
-    left: 50%;
-    width: 0;
-    border-bottom: 2px solid #345fa6;
-    content: '';
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out; }
-  .amos-tabs.amos-tabs-line .amos-tabs-tabitem-inner {
-    font-size: 14px;
-    background-color: transparent;
-    border: 0; }
-  .amos-tabs.amos-tabs-line .amos-tabs-tabitem.amos-tabs-tabitem-active::before {
-    left: 0;
-    width: 100%; }
-
-.amos-tabs.amos-tabs-bulge .amos-tabs-tabitem-inner:hover, .amos-tabs.amos-tabs-bulge .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner:hover {
+.amos-tabs.amos-tabs-bulge > .amos-tabs-list .amos-tabs-tabitem-inner:hover, .amos-tabs.amos-tabs-bulge > .amos-tabs-list .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner:hover {
   color: #3f3f3f; }
 
-.amos-tabs.amos-tabs-bulge .amos-tabs-list {
+.amos-tabs.amos-tabs-bulge > .amos-tabs-list {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4609,91 +4643,84 @@
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
+  .amos-tabs.amos-tabs-bulge > .amos-tabs-list .amos-tabs-tabitem-inner {
+    height: 30px;
+    padding: 6px 29px;
+    margin-left: 0.5em;
+    background-color: white;
+    border: solid 1px #eaeaea;
+    border-bottom: 0;
+    border-radius: 6px 6px 0 0; }
+  .amos-tabs.amos-tabs-bulge > .amos-tabs-list .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner {
+    height: 36px;
+    font-size: 16px;
+    color: #3f3f3f;
+    background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#e1e1e1));
+    background: -webkit-linear-gradient(top, #eee 0%, #e1e1e1 100%);
+    background: linear-gradient(180deg, #eee 0%, #e1e1e1 100%);
+    border: solid 1px #eaeaea;
+    border-radius: 6px 6px 0 0; }
 
-.amos-tabs.amos-tabs-bulge .amos-tabs-tabitem-inner {
-  height: 30px;
-  padding: 6px 29px;
-  margin-left: 0.5em;
-  background-color: white;
-  border: solid 1px #eaeaea;
-  border-bottom: 0;
-  border-radius: 6px 6px 0 0; }
-
-.amos-tabs.amos-tabs-bulge .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner {
-  height: 36px;
-  font-size: 16px;
-  color: #3f3f3f;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#e1e1e1));
-  background: -webkit-linear-gradient(top, #eee 0%, #e1e1e1 100%);
-  background: linear-gradient(180deg, #eee 0%, #e1e1e1 100%);
-  border: solid 1px #eaeaea;
-  border-radius: 6px 6px 0 0; }
-
-.amos-tabs.amos-tabs-bulge.amos-tabs-dynamic .amos-tabs-tabitem-inner {
+.amos-tabs.amos-tabs-bulge.amos-tabs-dynamic > .amos-tabs-list .amos-tabs-tabitem-inner {
   padding: 0 29px; }
 
-.amos-tabs.amos-tabs-bulge.amos-tabs-dynamic .amos-tabs-tabitem-remove {
+.amos-tabs.amos-tabs-bulge.amos-tabs-dynamic > .amos-tabs-list .amos-tabs-tabitem-remove {
   font-size: 12px; }
 
-.amos-tabs.amos-tabs-bullet .amos-tabs-tabitem-inner:hover {
+.amos-tabs.amos-tabs-bullet > .amos-tabs-list .amos-tabs-tabitem-inner:hover {
   background-color: #ebecf0; }
 
-.amos-tabs.amos-tabs-bullet .amos-tabs-list {
+.amos-tabs.amos-tabs-bullet > .amos-tabs-list {
   padding: 0; }
+  .amos-tabs.amos-tabs-bullet > .amos-tabs-list .amos-tabs-tabitem-inner {
+    padding: 6px 12px;
+    margin-right: -1px;
+    color: #333;
+    background-color: #f2f3f7;
+    border: 1px solid #c4c6cf;
+    border-right-color: transparent;
+    border-radius: 0;
+    -webkit-transition: background-color 0.1s linear;
+    transition: background-color 0.1s linear; }
+  .amos-tabs.amos-tabs-bullet > .amos-tabs-list .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner {
+    color: white;
+    background-color: #345fa6;
+    border-right: 1px solid #c4c6cf;
+    border-color: #345fa6; }
+  .amos-tabs.amos-tabs-bullet > .amos-tabs-list .amos-tabs-tabitem:first-child .amos-tabs-tabitem-inner {
+    border-radius: 6px 0 0 6px; }
+  .amos-tabs.amos-tabs-bullet > .amos-tabs-list .amos-tabs-tabitem:last-child .amos-tabs-tabitem-inner {
+    border-right: 1px solid #c4c6cf;
+    border-radius: 0 6px 6px 0; }
 
-.amos-tabs.amos-tabs-bullet .amos-tabs-tabitem-inner {
-  padding: 6px 12px;
-  margin-right: -1px;
-  color: #333;
-  background-color: #f2f3f7;
-  border: 1px solid #c4c6cf;
-  border-right-color: transparent;
-  border-radius: 0;
-  -webkit-transition: background-color 0.1s linear;
-  transition: background-color 0.1s linear; }
-
-.amos-tabs.amos-tabs-bullet .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner {
-  color: white;
-  background-color: #345fa6;
-  border-right: 1px solid #c4c6cf;
-  border-color: #345fa6; }
-
-.amos-tabs.amos-tabs-bullet .amos-tabs-tabitem:first-child .amos-tabs-tabitem-inner {
-  border-radius: 6px 0 0 6px; }
-
-.amos-tabs.amos-tabs-bullet .amos-tabs-tabitem:last-child .amos-tabs-tabitem-inner {
-  border-right: 1px solid #c4c6cf;
-  border-radius: 0 6px 6px 0; }
-
-.amos-tabs.amos-tabs-divider .amos-tabs-tabitem-inner:hover {
+.amos-tabs.amos-tabs-divider > .amos-tabs-list .amos-tabs-tabitem-inner:hover {
   background-color: transparent; }
 
-.amos-tabs.amos-tabs-divider .amos-tabs-list {
+.amos-tabs.amos-tabs-divider > .amos-tabs-list {
   padding: 0;
   border: 0; }
-
-.amos-tabs.amos-tabs-divider .amos-tabs-tabitem {
-  position: relative; }
-  .amos-tabs.amos-tabs-divider .amos-tabs-tabitem::before {
-    position: absolute;
-    content: '';
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
-  .amos-tabs.amos-tabs-divider .amos-tabs-tabitem:not(:last-child)::after {
-    position: absolute;
-    top: calc(50% - 4px);
-    right: 0;
-    width: 1px;
-    height: 8px;
-    background-color: #888;
-    content: ''; }
-  .amos-tabs.amos-tabs-divider .amos-tabs-tabitem-inner {
-    padding: 6px 12px;
-    color: #666;
-    background-color: transparent; }
-  .amos-tabs.amos-tabs-divider .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner {
-    color: #345fa6;
-    background-color: transparent; }
+  .amos-tabs.amos-tabs-divider > .amos-tabs-list .amos-tabs-tabitem {
+    position: relative; }
+    .amos-tabs.amos-tabs-divider > .amos-tabs-list .amos-tabs-tabitem::before {
+      position: absolute;
+      content: '';
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+    .amos-tabs.amos-tabs-divider > .amos-tabs-list .amos-tabs-tabitem:not(:last-child)::after {
+      position: absolute;
+      top: calc(50% - 4px);
+      right: 0;
+      width: 1px;
+      height: 8px;
+      background-color: #888;
+      content: ''; }
+    .amos-tabs.amos-tabs-divider > .amos-tabs-list .amos-tabs-tabitem-inner {
+      padding: 6px 12px;
+      color: #666;
+      background-color: transparent; }
+    .amos-tabs.amos-tabs-divider > .amos-tabs-list .amos-tabs-tabitem.amos-tabs-tabitem-active .amos-tabs-tabitem-inner {
+      color: #345fa6;
+      background-color: transparent; }
 
 @keyframes iconSpin {
   0% {
@@ -5882,9 +5909,9 @@
 .chart-theme {
   display: inline-block;
   padding: 6px 0; }
-  .chart-theme .chart-theme-tip {
+  .chart-theme-tip {
     padding-bottom: 6px; }
-  .chart-theme .chart-theme-result {
+  .chart-theme-result {
     position: relative;
     display: inline-block;
     width: 190px;
@@ -5892,18 +5919,22 @@
     padding: 5px 0;
     overflow: hidden;
     background-color: #f2f2e6; }
-    .chart-theme .chart-theme-result .color-result-item {
+    .chart-theme-result .color-result-item {
       display: inline-block;
       width: 18px;
       height: 18px;
       margin: 0 5px;
       border-radius: 100%; }
-    .chart-theme .chart-theme-result i {
+    .chart-theme-result i {
       display: inline-block;
       vertical-align: bottom;
       cursor: pointer; }
-      .chart-theme .chart-theme-result i:hover {
+      .chart-theme-result i:hover {
         color: #0f4aaa; }
+  .chart-theme-cancel-select {
+    margin-left: 6px; }
+  .chart-theme-modal .amos-modal-footer .amos-btn + .amos-btn {
+    margin-left: 6px; }
 
 .theme-modal-container .modal-content-top .theme-color-content {
   display: inline-block;
@@ -7539,10 +7570,10 @@
 .amos-pagination-go {
   display: inline-block;
   vertical-align: middle; }
-  .amos-pagination-go .amos-pagination-go-number {
+  .amos-pagination-go-number {
     width: 40px;
     height: 2.3em; }
-  .amos-pagination-go .amos-pagination-go-jumper {
+  .amos-pagination-go-jumper {
     height: 2.1em;
     padding: 0 1em;
     margin-left: 10px; }
@@ -7560,22 +7591,7 @@
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none; }
-    .amos-pagination-paging li span {
-      position: relative;
-      float: left;
-      width: 40px;
-      height: 2.5em;
-      padding: 0;
-      margin-left: -1px;
-      line-height: 2.5em;
-      color: #666;
-      text-align: center;
-      text-decoration: none;
-      cursor: default;
-      background-color: white;
-      border: 1px solid #ddd; }
-    .amos-pagination-paging li span:hover {
-      background: none; }
+    .amos-pagination-paging li span,
     .amos-pagination-paging li a {
       position: relative;
       float: left;
@@ -7586,50 +7602,118 @@
       line-height: 2.5em;
       color: #666;
       text-align: center;
-      text-decoration: none;
-      vertical-align: middle;
       border: 1px solid #ddd; }
-    .amos-pagination-paging li a:hover {
-      color: #345fa6;
-      text-decoration: none; }
-  .amos-pagination-paging .amos-pagination-paging-li-prev {
+    .amos-pagination-paging li span {
+      cursor: default;
+      background-color: white; }
+      .amos-pagination-paging li span:hover {
+        background: none; }
+    .amos-pagination-paging li a {
+      text-decoration: none;
+      vertical-align: middle; }
+      .amos-pagination-paging li a:hover {
+        color: #345fa6;
+        text-decoration: none; }
+  .amos-pagination-paging li.amos-pagination-paging-li-prev {
     height: 2.5em;
     margin-left: 0;
     line-height: 28px;
     border-bottom-left-radius: 2px;
     border-top-left-radius: 2px; }
-  .amos-pagination-paging .amos-pagination-paging-li-next {
+  .amos-pagination-paging li.amos-pagination-paging-li-next {
     height: 2.5em;
     line-height: 28px;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px; }
-  .amos-pagination-paging .amos-pagination-paging-li-frist {
+  .amos-pagination-paging li.amos-pagination-paging-li-frist {
     color: #999;
     cursor: default;
     background: #eceff1; }
-  .amos-pagination-paging .amos-pagination-paging-li-frist:hover {
+  .amos-pagination-paging li.amos-pagination-paging-li-frist:hover {
     color: #999;
     cursor: default;
     background: #eceff1;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd; }
-  .amos-pagination-paging .amos-pagination-paging-li-end {
+  .amos-pagination-paging li.amos-pagination-paging-li-end {
     color: #999;
     background: #eceff1; }
-  .amos-pagination-paging .amos-pagination-paging-li-end:hover {
+  .amos-pagination-paging li.amos-pagination-paging-li-end:hover {
     color: #999;
     cursor: default;
     background: #eceff1;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd; }
-  .amos-pagination-paging .amos-pagination-paging-li-active a {
+  .amos-pagination-paging li.amos-pagination-paging-li-active a {
     color: white;
     cursor: default;
     background: #1a4fa3;
     border-top: 1px solid #1a4fa3;
     border-bottom: 1px solid #1a4fa3; }
-  .amos-pagination-paging .amos-pagination-paging-li-active a:hover {
+  .amos-pagination-paging li.amos-pagination-paging-li-active a:hover {
     color: white; }
+
+.assistant-inner-count {
+  color: red; }
+
+.amos-paper {
+  display: inline-block;
+  border-radius: 4px; }
+  .amos-paper li {
+    display: inline;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+    .amos-paper li span,
+    .amos-paper li a {
+      position: relative;
+      float: left;
+      width: 40px;
+      height: 2.5em;
+      padding: 0;
+      margin-left: -1px;
+      line-height: 2.5em;
+      color: #666;
+      text-align: center;
+      border: 1px solid #ddd; }
+    .amos-paper li span {
+      cursor: default;
+      background-color: white; }
+      .amos-paper li span:hover {
+        background: none; }
+    .amos-paper li a {
+      text-decoration: none;
+      vertical-align: middle; }
+      .amos-paper li a:hover {
+        color: #345fa6;
+        text-decoration: none; }
+    .amos-paper li:first-child a,
+    .amos-paper li:first-child span {
+      margin-left: 0;
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px; }
+    .amos-paper li.amos-paper-li-disabled span,
+    .amos-paper li.amos-paper-li-disabled span:hover,
+    .amos-paper li.amos-paper-li-disabled span:focus,
+    .amos-paper li.amos-paper-li-disabled a,
+    .amos-paper li.amos-paper-li-disabled a:hover,
+    .amos-paper li.amos-paper-li-disabled a:focus {
+      color: #777;
+      cursor: not-allowed;
+      background-color: white;
+      border-color: #ddd; }
+  .amos-paper-li.amos-paper-li-active span,
+  .amos-paper-li.amos-paper-li-active span:hover,
+  .amos-paper-li.amos-paper-li-active span:focus,
+  .amos-paper-li.amos-paper-li-active a,
+  .amos-paper-li.amos-paper-li-active a:hover,
+  .amos-paper-li.amos-paper-li-active a:focus {
+    color: white;
+    cursor: default;
+    background-color: #1a4fa3;
+    border-color: #1a4fa3; }
 
 /**  Colors */
 /** border */
@@ -8867,10 +8951,10 @@
 
 /**
  *定义滚动条样式 圆角和阴影不需要则传入null
- *	1、$outColor -- 滚动条颜色
- *	2、$innerColor -- 滑块颜色
- *	3、$height -- 滚动条宽高、圆角
- *	4、$width
+ *	1、$width
+ *	2、$height -- 滚动条宽高、圆角
+ *	3、$outColor -- 滚动条颜色
+ *	4、$innerColor -- 滑块颜色
  *	5、$radius
  *	6、$shadow -- 阴影
  *  example:
@@ -8878,14 +8962,23 @@
  */
 /**
  *定义通用交互滚动条样式 圆角和阴影不需要则传入null
- *	1、$outColor -- 滚动条颜色
- *	2、$innerColor -- 滑块颜色
- *	3、$height -- 滚动条宽高、圆角
- *	4、$width
+ *	1、$width
+ *	2、$height -- 滚动条宽高、圆角
+ *	3、$outColor -- 滚动条颜色
+ *	4、$innerColor -- 滑块颜色
  *	5、$radius
  *	6、$shadow -- 阴影
  *  example:
  *  .my { @include pretty-scrollbar(5px, 8px); }
+ */
+/**
+ * 定义通用交互滚动条样式无轨道模式
+ *	1、$width
+ *	2、$height -- 滚动条宽高、圆角
+ *	3、$outColor -- 滚动条颜色
+ *  4、$radius
+ *  example:
+ *  .my { @include pretty-bar(5px, 8px); }
  */
 .amos-transfer {
   width: 100%; }
@@ -9044,6 +9137,8 @@
       /* 定义滑块 内阴影+圆角 */
       height: 100%;
       overflow: auto; }
+      .amos-transfer2-list-content {
+        overflow: overlay; }
       .amos-transfer2-list-content::-webkit-scrollbar {
         display: none;
         width: 6px;
